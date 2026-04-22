@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Linkwave Connect | Infraestrutura e Conectividade</title>
+    <meta name="description" content="Provedor de Hospedagem, VPS, Email e Internet Fibra Óptica.">
+    <link rel="icon" type="image/png" href="https://image.openwave.net.br/image/012a0895-a13c-410a-9725-b7a7bf89b065.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
+                    colors: { brand: { dark: '#050505', card: '#0F0F0F', border: '#1F1F1F', green: '#10b981', blue: '#3b82f6', purple: '#8b5cf6', orange: '#f97316' } },
+                    animation: { 'fade-in': 'fadeIn 0.3s ease-out forwards' },
+                    keyframes: { fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #e5e5e5; overflow-x: hidden; overscroll-behavior-y: none; }
+        .glass { 
+            background: rgba(15, 15, 15, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transform: translateZ(0); -webkit-transform: translateZ(0); will-change: transform, backdrop-filter;
+        }
+        @media (min-width: 768px) { .glass { background: rgba(15, 15, 15, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); } }
+        .text-gradient { background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-grid { background-image: linear-gradient(#ffffff05 1px, transparent 1px), linear-gradient(90deg, #ffffff05 1px, transparent 1px); background-size: 30px 30px; }
+        .card-hover { transition: transform 0.2s ease, border-color 0.2s ease; }
+        @media (min-width: 768px) { .card-hover { transition: all 0.3s ease; } .card-hover:hover { transform: translateY(-4px); border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5); } }
+        .isp-glow { box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.15); }
+        .nav-btn.active { color: white; background-color: rgba(255, 255, 255, 0.1); border-color: #333; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-blue selection:text-white flex flex-col min-h-screen relative">
+    
+    <!-- Fundo Global (Acelerado) -->
+    <div class="fixed inset-0 bg-grid opacity-20 pointer-events-none transform-gpu z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- LOGO AUMENTADO -->
+                <a href="https://linkwaveconnect.com.br" class="cursor-pointer group flex-shrink-0 block">
+                    <img src="https://linkwaveconnect.com.br/assets/linkwaveconnect.png" alt="Linkwave Connect" class="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" style="image-rendering: -webkit-optimize-contrast; transform-origin: left center;">
+                </a>
+
+                <!-- Desktop Menu (Serviços) -->
+                <div class="hidden md:flex items-center gap-1 p-1 bg-brand-dark/50 rounded-xl border border-brand-border/50">
+                    <button onclick="navigateTo('hosting')" id="nav-d-hosting" class="nav-btn px-4 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent whitespace-nowrap">Cloud & VPS</button>
+                    <button onclick="navigateTo('isp')" id="nav-d-isp" class="nav-btn px-4 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent flex items-center gap-2 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>Internet</button>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://linkwaveconnect.com.br/midia/" class="px-4 py-2 rounded-lg text-xs font-medium text-purple-400 hover:text-white hover:bg-purple-500/10 transition-all border border-transparent whitespace-nowrap flex items-center gap-2" title="Serviço de Mídia"><i class="fa-solid fa-video"></i> Mídia</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://tools.linkwaveconnect.com.br" class="px-4 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent whitespace-nowrap flex items-center gap-2"><i class="fa-solid fa-toolbox"></i> Ferramentas</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://openwave.net.br" class="px-4 py-2 rounded-lg text-xs font-medium text-brand-blue hover:text-white hover:bg-brand-blue/10 transition-all border border-transparent whitespace-nowrap flex items-center gap-2"><i class="fa-solid fa-cubes"></i> Ecossistema</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://transparencia.linkwaveconnect.com.br/" class="px-4 py-2 rounded-lg text-xs font-medium text-cyan-400 hover:text-white hover:bg-cyan-500/10 transition-all border border-transparent whitespace-nowrap flex items-center gap-2" title="Portal da Transparência"><i class="fa-solid fa-scale-balanced"></i> Transparência</a>
+                </div>
+
+                <!-- Right Actions: Login -->
+                <div class="flex items-center gap-2 md:gap-3">
+                    <a href="https://web.linkwaveconnect.com.br/index.php?rp=/login" class="flex items-center justify-center bg-white text-black h-9 md:h-10 px-4 rounded-lg text-xs md:text-sm font-bold hover:bg-gray-200 transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] whitespace-nowrap">
+                        Login
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden pb-3 -mt-1 overflow-x-auto no-scrollbar flex gap-2 w-full border-t border-brand-border/30 pt-3">
+                <button onclick="navigateTo('hosting')" id="nav-m-hosting" class="nav-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap">Cloud & VPS</button>
+                <button onclick="navigateTo('isp')" id="nav-m-isp" class="nav-btn flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>Internet</button>
+                <a href="https://linkwaveconnect.com.br/midia/" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-purple-400 border border-purple-500/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-video"></i>Mídia</a>
+                <a href="https://tools.linkwaveconnect.com.br" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-toolbox"></i>Ferramentas</a>
+                <a href="https://openwave.net.br" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-brand-blue border border-brand-blue/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-cubes"></i>Ecossistema</a>
+                <a href="https://transparencia.linkwaveconnect.com.br/" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-cyan-400 border border-cyan-500/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-scale-balanced"></i>Transparência</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-[140px] md:pt-32 pb-10 px-4 relative z-10">
+        <!-- HOME -->
+        <div id="page-home" class="page-section max-w-7xl mx-auto animate-fade-in relative">
+            <div class="relative overflow-hidden rounded-2xl md:rounded-3xl bg-brand-card border border-brand-border p-8 md:p-24 text-center">
+                <!-- Luz Larga Absolute -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] md:w-[600px] h-[150vw] md:h-[600px] bg-brand-blue/5 rounded-full blur-[80px] pointer-events-none transform-gpu z-0"></div>
+                
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#050505] border border-brand-border text-[10px] md:text-xs text-gray-400 mb-6 md:mb-8"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span> Rede 100% Fibra Óptica</div>
+                    <h1 class="font-display text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white leading-tight">Onde a infraestrutura <br/>encontra a <span class="text-gradient">velocidade.</span></h1>
+                    <p class="text-sm md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">A Linkwave Connect unifica servidores Cloud VPS de última geração com internet Fibra dedicada.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+                        <button onclick="navigateTo('hosting')" class="group relative overflow-hidden bg-brand-dark border border-brand-border p-5 rounded-xl hover:border-brand-blue transition-all text-left"><div class="absolute top-0 right-0 p-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"><i class="fa-solid fa-arrow-right text-brand-blue -rotate-45 md:group-hover:rotate-0 transition-transform duration-300"></i></div><i class="fa-solid fa-server text-xl text-brand-blue mb-3"></i><h3 class="text-white font-bold text-base">Cloud & VPS</h3><p class="text-[10px] text-gray-500 mt-1">Para desenvolvedores.</p></button>
+                        <button onclick="navigateTo('isp')" class="group relative overflow-hidden bg-brand-dark border border-brand-border p-5 rounded-xl hover:border-brand-green transition-all text-left"><div class="absolute top-0 right-0 p-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"><i class="fa-solid fa-arrow-right text-brand-green -rotate-45 md:group-hover:rotate-0 transition-transform duration-300"></i></div><i class="fa-solid fa-wifi text-xl text-brand-green mb-3"></i><h3 class="text-white font-bold text-base">Internet Fibra</h3><p class="text-[10px] text-gray-500 mt-1">Para sua casa.</p></button>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-brand-border/50"><a href="https://openwave.net.br" class="text-xs text-gray-400 hover:text-brand-blue transition-colors flex items-center justify-center gap-2 py-2 w-full"><i class="fa-solid fa-cubes"></i> Ecossistema Openwave &rarr;</a></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- HOSTING -->
+        <div id="page-hosting" class="page-section max-w-7xl mx-auto hidden animate-fade-in relative z-10">
+            <div class="mb-8 border-b border-brand-border pb-6"><h2 class="font-display text-2xl md:text-4xl font-bold mb-2 text-white">Soluções Cloud</h2><p class="text-gray-500 text-sm md:text-lg">Performance garantida com hardware próprio.</p></div>
+            <div id="domains-container" class="mb-12 bg-gradient-to-r from-brand-card to-blue-900/10 border border-brand-border p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6"></div>
+            <h3 class="text-lg md:text-2xl font-bold text-white mb-4 border-l-4 border-brand-blue pl-3">Hospedagem</h3><div id="hosting_shared-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12"></div>
+            <h3 class="text-lg md:text-2xl font-bold text-white mb-4 border-l-4 border-purple-500 pl-3">Dedicados</h3><div id="hosting_dedicated-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12"></div>
+            <h3 class="text-lg md:text-2xl font-bold text-white mb-4 border-l-4 border-brand-green pl-3">VPS Cloud</h3><div id="hosting_vps-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12"></div>
+            <h3 class="text-lg md:text-2xl font-bold text-white mb-4 border-l-4 border-orange-500 pl-3">Serviços Adicionais</h3><div id="hosting_addons-container" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+        </div>
+        
+        <!-- ISP -->
+        <div id="page-isp" class="page-section max-w-7xl mx-auto hidden animate-fade-in relative z-10">
+            <div class="mb-8 border-b border-brand-border pb-6"><h2 class="font-display text-2xl md:text-4xl font-bold mb-2 text-white">Internet Fibra</h2><p class="text-gray-500 text-sm md:text-lg">Conexão ultra rápida.</p></div>
+            <div id="isp-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12"></div>
+        </div>
+    </main>
+
+    <footer class="border-t border-brand-border bg-[#020202] pt-12 pb-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div>
+                    <!-- LOGO ISOLADO -->
+                    <a href="https://linkwaveconnect.com.br" class="flex items-center justify-center md:justify-start mb-4 opacity-60 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+                        <img src="https://linkwaveconnect.com.br/assets/linkwaveconnect.png" alt="Linkwave Connect" class="h-12 md:h-16 w-auto">
+                    </a>
+                    <p class="text-sm text-gray-600 max-w-sm">Provedora líder em soluções de conectividade e infraestrutura digital.</p>
+                </div>
+                
+                <div class="flex flex-col gap-3 w-full md:w-auto min-w-[220px]">
+                    <a href="https://wa.me/551145804215?text=Olá! Gostaria de falar com a equipe da Linkwave Connect." target="_blank" class="bg-brand-green hover:bg-green-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_15px_rgba(37,211,102,0.2)] flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Falar no WhatsApp
+                    </a>
+                    <a href="mailto:suporte@linkwaveconnect.com.br" class="bg-[#111] hover:bg-[#222] border border-brand-border text-gray-300 hover:text-white px-6 py-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-envelope"></i> Atendimento / Suporte
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 font-mono">
+                <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+                    <p>&copy; <span id="copyright-year">2024</span> Linkwave Connect LTDA. Todos os direitos reservados.</p>
+                    <p class="font-bold text-gray-500">CNPJ: 53.108.042/0001-07</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        async function loadData() {
+            try {
+                const ts = new Date().getTime();
+                const response = await fetch(`data.json?t=${ts}`);
+                const data = await response.json();
+                initRender(data);
+            } catch (error) {
+                console.error("Erro ao carregar os dados:", error);
+            }
+        }
+
+        function initRender(data) {
+            renderDomains(data.domains);
+            renderSharedHosting(data.plans.filter(p => p.category === 'hosting_shared'));
+            renderDedicatedHosting(data.plans.filter(p => p.category === 'hosting_dedicated'));
+            renderVPSHosting(data.plans.filter(p => p.category === 'hosting_vps'));
+            renderAddons(data.plans.filter(p => p.category === 'hosting_addon'));
+            renderISPPlans(data.plans.filter(p => p.category === 'isp'));
+        }
+        function renderDomains(dConfig) { 
+            const container = document.getElementById('domains-container');
+            if(!container) return;
+            const domainHTML = dConfig.list.map(d => {
+                const badgeHtml = d.badge ? `<span class="absolute -top-2 -right-2 bg-brand-green text-black text-[9px] px-1.5 py-0.5 rounded-full font-bold shadow-sm">${d.badge}</span>` : '';
+                return `<a href="${d.link}" target="_blank" class="relative group bg-brand-dark px-5 py-3 rounded-xl border border-brand-border text-center flex-grow md:flex-grow-0 hover:border-brand-blue transition-all min-w-[120px]">${badgeHtml}<span class="block text-white font-bold text-lg group-hover:text-brand-blue transition-colors">${d.tld}</span><span class="block text-xs text-gray-500 mb-1">${d.type}</span><span class="block text-xs text-brand-green font-bold">${d.price}</span></a>`;
+            }).join('');
+            container.innerHTML = `<div class="flex-1"><h3 class="text-xl md:text-2xl font-bold text-white mb-2"><i class="fa-solid fa-globe mr-2 text-brand-blue"></i>Registre seu Domínio</h3><p class="text-sm text-gray-400">Garanta a identidade da sua marca na internet.</p></div><div class="flex gap-3 flex-wrap justify-center md:justify-start my-4 md:my-0">${domainHTML}</div><a href="${dConfig.general_button.link}" class="bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-gray-200 transition-all shadow-lg text-sm whitespace-nowrap">${dConfig.general_button.text}</a>`;
+        }
+        function renderSharedHosting(p){ document.getElementById('hosting_shared-container').innerHTML = p.map(x=>`<div class="bg-brand-card border border-brand-border p-6 rounded-2xl relative overflow-hidden flex flex-col justify-between ${x.highlight?'border-brand-blue':''}"><div class="flex justify-between mb-4"><div><h4 class="text-base font-bold text-white">${x.name}</h4><p class="text-[10px] text-gray-500">${x.description}</p></div><i class="fa-solid ${x.icon} text-brand-blue text-xl"></i></div><ul class="space-y-2 text-xs text-gray-400 mb-6">${x.features.map(f=>`<li><i class="fa-solid fa-check text-brand-blue mr-2"></i>${f}</li>`).join('')}</ul><div><div class="text-lg font-bold text-white mb-3">${x.price}<span class="text-[10px] font-normal text-gray-500">${x.unit}</span></div><a href="${x.link}" class="block w-full py-2 text-center rounded-lg font-medium text-sm ${x.highlight?'bg-brand-blue text-white':'bg-brand-border text-gray-300'}">Contratar</a></div></div>`).join('') }
+        function renderDedicatedHosting(p){ document.getElementById('hosting_dedicated-container').innerHTML = p.map(x=>`<div class="bg-brand-card border border-brand-border p-5 rounded-2xl flex flex-col justify-between ${x.highlight?'border-purple-500':''}"><div><div class="text-purple-400 mb-3"><i class="fa-solid ${x.icon} text-2xl"></i></div><h4 class="text-base font-bold text-white">${x.name}</h4><p class="text-xl font-bold text-white mb-4">${x.price}</p><ul class="text-xs text-gray-400 space-y-1 mb-4">${x.specs.map(s=>`<li>${s}</li>`).join('')}</ul></div><a href="${x.link}" class="block w-full py-2 rounded text-center text-xs ${x.highlight?'bg-purple-600 text-white':'border border-brand-border text-gray-400'}">Configurar</a></div>`).join('') }
+        function renderVPSHosting(p){ document.getElementById('hosting_vps-container').innerHTML = p.map(x=>`<div class="bg-[#111] p-5 rounded-xl border ${x.highlight?'border-brand-green/30':'border-brand-border'} flex flex-col"><h4 class="font-bold text-white text-sm">${x.name}</h4><div class="my-3 text-2xl font-bold ${x.highlight?'text-brand-green':'text-white'}">${x.price}</div><div class="space-y-1 text-xs text-gray-400 mb-4 flex-grow"><p>${x.specs.cpu}</p><p>${x.specs.ram}</p><p>${x.specs.disk}</p></div><a href="${x.link}" class="w-full py-2 rounded text-center font-bold text-xs ${x.highlight?'bg-brand-green text-black':'bg-brand-border text-white'}">Assinar</a></div>`).join('') }
+        function renderAddons(p){ const c = document.getElementById('hosting_addons-container'); if(c) c.innerHTML = p.map(x=>`<div class="bg-[#111] p-5 rounded-xl border ${x.highlight?'border-orange-500/50 shadow-[0_0_15px_rgba(249,115,22,0.1)]':'border-brand-border'} flex flex-col justify-between hover:-translate-y-1 transition-all"><div><div class="text-orange-500 mb-3"><i class="fa-solid ${x.icon} text-2xl"></i></div><h4 class="font-bold text-white text-sm mb-1">${x.name}</h4><p class="text-xs text-gray-500 mb-4">${x.description}</p></div><div><div class="my-3 text-xl font-bold ${x.highlight?'text-orange-400':'text-white'}">${x.price}<span class="text-[10px] font-normal text-gray-500 ml-1">${x.unit}</span></div><a href="${x.link}" class="w-full py-2 rounded text-center font-bold text-xs block ${x.highlight?'bg-orange-600 hover:bg-orange-500 text-white':'bg-brand-border hover:bg-gray-700 text-white'}">Adicionar</a></div></div>`).join('') }
+        function renderISPPlans(p){ document.getElementById('isp-container').innerHTML = p.map(x=>`<div class="bg-brand-card border border-brand-border p-6 rounded-2xl flex flex-col justify-between ${x.highlight?'scale-100 md:scale-105 shadow-xl border-brand-green bg-[#151515] z-10':''}"><div class="mb-4"><h3 class="${x.styleClass} font-bold uppercase text-xs mb-1">${x.name}</h3><div class="flex items-baseline gap-1"><span class="text-4xl md:text-5xl font-bold text-white">${x.speed}</span><span class="text-base text-gray-500 font-medium">${x.unit}</span></div></div><div class="mb-4 border-t border-brand-border pt-4 space-y-2">${x.features.map(f=>`<p class="text-xs ${f.bold?'text-white':'text-gray-400'}"><i class="fa-solid ${f.icon} w-5 text-center text-brand-green"></i> ${f.text}</p>`).join('')}</div><div><div class="text-xl font-bold text-white mb-3">${x.price}</div><a href="${x.link}" class="block w-full py-2.5 text-center rounded-lg font-bold text-sm ${x.highlight?'bg-brand-green text-black':'border border-brand-border text-white'}">Assinar</a></div></div>`).join('') }
+
+        function navigateTo(id) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.add('hidden'));
+            const t = document.getElementById(`page-${id}`) || document.getElementById('page-home');
+            t.classList.remove('hidden');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active', 'bg-brand-dark', 'text-white', 'border-brand-border'));
+            const dBtn = document.getElementById(`nav-d-${id}`); if(dBtn) dBtn.classList.add('active');
+            const mBtn = document.getElementById(`nav-m-${id}`); if(mBtn) { mBtn.classList.add('bg-brand-dark', 'text-white', 'border-gray-600'); mBtn.classList.remove('border-brand-border', 'text-gray-400'); }
+            window.scrollTo(0,0);
+        }
+
+        function checkHashAndNavigate() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && ['hosting', 'isp'].includes(hash)) {
+                navigateTo(hash);
+            } else {
+                navigateTo('home');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { 
+            loadData(); 
+            checkHashAndNavigate(); 
+            
+            const startYear = 2023, currentYear = new Date().getFullYear();
+            document.getElementById('copyright-year').textContent = currentYear > startYear ? `${startYear}-${currentYear}` : startYear;
+        });
+
+        window.addEventListener('hashchange', checkHashAndNavigate);
+    </script>
+</body>
+</html>

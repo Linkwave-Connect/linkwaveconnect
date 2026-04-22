@@ -1,0 +1,217 @@
+{
+  "domains": {
+    "general_button": {
+      "text": "Ver todos os domínios",
+      "link": "https://web.linkwaveconnect.com.br/domainchecker.php"
+    },
+    "list": [
+      {
+        "tld": ".com.br",
+        "type": "Nacional",
+        "price": "R$ 49,90/ano",
+        "badge": "Popular",
+        "link": "https://web.linkwaveconnect.com.br/cart.php?a=add&domain=register"
+      },
+      {
+        "tld": ".net.br",
+        "type": "Nacional",
+        "price": "R$ 49,90/ano",
+        "link": "https://web.linkwaveconnect.com.br/cart.php?a=add&domain=register"
+      }
+    ]
+  },
+  "plans": [
+    {
+      "id": "shared-start",
+      "category": "hosting_shared",
+      "name": "Plano Start",
+      "description": "Ideal para sites pessoais",
+      "icon": "fa-cloud",
+      "price": "R$ 19,90",
+      "unit": "/mês",
+      "features": ["1 Site", "10GB NVMe", "SSL Grátis"],
+      "link": "URL_SHARED_1",
+      "highlight": false
+    },
+    {
+      "id": "shared-pro",
+      "category": "hosting_shared",
+      "name": "Plano Pro",
+      "description": "Para negócios em crescimento",
+      "icon": "fa-rocket",
+      "price": "R$ 39,90",
+      "unit": "/mês",
+      "features": ["Sites Ilimitados", "50GB NVMe", "Domínio Grátis"],
+      "link": "URL_SHARED_2",
+      "highlight": true
+    },
+    {
+      "id": "dedi-entry",
+      "category": "hosting_dedicated",
+      "name": "Dedicado Entry",
+      "icon": "fa-server",
+      "price": "R$ 399",
+      "unit": "/mês",
+      "specs": ["Xeon E3", "16GB RAM", "480GB SSD"],
+      "link": "#",
+      "highlight": false
+    },
+    {
+      "id": "dedi-mid",
+      "category": "hosting_dedicated",
+      "name": "Dedicado Mid",
+      "icon": "fa-server",
+      "price": "R$ 699",
+      "unit": "/mês",
+      "specs": ["Dual Xeon Silver", "32GB RAM", "1TB NVMe"],
+      "link": "#",
+      "highlight": true
+    },
+    {
+      "id": "dedi-max",
+      "category": "hosting_dedicated",
+      "name": "Dedicado Max",
+      "icon": "fa-server",
+      "price": "R$ 1199",
+      "unit": "/mês",
+      "specs": ["AMD EPYC", "128GB RAM", "2TB NVMe"],
+      "link": "#",
+      "highlight": false
+    },
+    {
+      "id": "addon-git",
+      "category": "hosting_addon",
+      "name": "Repositório Git Privado",
+      "description": "Instância Gitea privada e isolada para sua equipe com 20GB de armazenamento NVMe.",
+      "icon": "fa-code-branch",
+      "price": "R$ 20,00",
+      "unit": "/mês",
+      "link": "#",
+      "highlight": true
+    },
+    {
+      "id": "addon-backup",
+      "category": "hosting_addon",
+      "name": "Backup Extra 100GB",
+      "description": "Espaço de armazenamento extra em storage isolado externo (FTP/S3).",
+      "icon": "fa-hard-drive",
+      "price": "R$ 15,00",
+      "unit": "/mês",
+      "link": "#",
+      "highlight": false
+    },
+    {
+      "id": "addon-ip",
+      "category": "hosting_addon",
+      "name": "IP Dedicado IPv4",
+      "description": "Endereço IPv4 adicional e exclusivo para o seu servidor Cloud VPS ou Dedicado.",
+      "icon": "fa-network-wired",
+      "price": "R$ 12,00",
+      "unit": "/mês",
+      "link": "#",
+      "highlight": false
+    },
+    {
+      "id": "vps-start",
+      "category": "hosting_vps",
+      "name": "VPS Start",
+      "price": "R$ 29,90",
+      "specs": { "cpu": "1 vCPU", "ram": "2GB RAM", "disk": "40GB SSD" },
+      "link": "#",
+      "highlight": false
+    },
+    {
+      "id": "vps-pro",
+      "category": "hosting_vps",
+      "name": "VPS Pro",
+      "price": "R$ 59,90",
+      "specs": { "cpu": "2 vCPU", "ram": "4GB RAM", "disk": "80GB SSD" },
+      "link": "#",
+      "highlight": true
+    },
+    {
+      "id": "vps-biz",
+      "category": "hosting_vps",
+      "name": "VPS Business",
+      "price": "R$ 109,90",
+      "specs": { "cpu": "4 vCPU", "ram": "8GB RAM", "disk": "160GB SSD" },
+      "link": "#",
+      "highlight": false
+    },
+    {
+      "id": "isp-basic",
+      "category": "isp",
+      "name": "Basic",
+      "speed": "200",
+      "unit": "Mega",
+      "price": "R$ 59,90",
+      "features": [
+        { "icon": "fa-wifi", "text": "WiFi 5 Dual" },
+        { "icon": "fa-download", "text": "Download Ilimitado" }
+      ],
+      "link": "#",
+      "highlight": false,
+      "styleClass": "text-gray-400"
+    },
+    {
+      "id": "isp-flex",
+      "category": "isp",
+      "name": "Flex",
+      "speed": "300",
+      "unit": "Mega",
+      "price": "R$ 69,90",
+      "features": [
+        { "icon": "fa-wifi", "text": "WiFi 5 Turbo" },
+        { "icon": "fa-users", "text": "Ideal p/ Família" }
+      ],
+      "link": "#",
+      "highlight": false,
+      "styleClass": "text-brand-blue"
+    },
+    {
+      "id": "isp-turbo",
+      "category": "isp",
+      "name": "Turbo",
+      "speed": "500",
+      "unit": "Mega",
+      "price": "R$ 89,90",
+      "features": [
+        { "icon": "fa-wifi", "text": "WiFi 6 Gigabit", "bold": true },
+        { "icon": "fa-gamepad", "text": "Baixa Latência" }
+      ],
+      "link": "#",
+      "highlight": true,
+      "styleClass": "text-brand-green"
+    },
+    {
+      "id": "isp-power",
+      "category": "isp",
+      "name": "Power",
+      "speed": "700",
+      "unit": "Mega",
+      "price": "R$ 109,90",
+      "features": [
+        { "icon": "fa-wifi", "text": "WiFi 6 Mesh" },
+        { "icon": "fa-film", "text": "Streaming 4K" }
+      ],
+      "link": "#",
+      "highlight": false,
+      "styleClass": "text-purple-400"
+    },
+    {
+      "id": "isp-ultra",
+      "category": "isp",
+      "name": "Ultra",
+      "speed": "1",
+      "unit": "Giga",
+      "price": "R$ 129,90",
+      "features": [
+        { "icon": "fa-tachograph-digital", "text": "Velocidade Máxima" },
+        { "icon": "fa-wifi", "text": "WiFi 6 Dual" }
+      ],
+      "link": "#",
+      "highlight": false,
+      "styleClass": "text-brand-orange"
+    }
+  ]
+}
