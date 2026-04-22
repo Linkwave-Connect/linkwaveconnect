@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviço de Mídia para Igrejas | Linkwave Connect</title>
+    <meta name="description" content="Apoio técnico gratuito em transmissão, projeção e áudio para igrejas. Um projeto Linkwave Connect.">
+    <!-- Adicionado Canonical URL para SEO -->
+    <link rel="canonical" href="https://linkwaveconnect.com.br/midia/">
+    <link rel="icon" type="image/png" href="https://image.openwave.net.br/image/012a0895-a13c-410a-9725-b7a7bf89b065.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#050505',
+                            card: '#0F0F0F',
+                            border: '#1F1F1F',
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            green: '#10b981'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+        }
+        .bg-grid {
+            background-image: linear-gradient(#ffffff05 1px, transparent 1px),
+                              linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transform: translate3d(0, 0, 0); 
+            -webkit-transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            will-change: transform, backdrop-filter;
+        }
+        .glass-card {
+            background: rgba(15, 15, 15, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid #1F1F1F;
+            transition: all 0.3s ease;
+            transform: translate3d(0, 0, 0); 
+            -webkit-transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            will-change: transform, backdrop-filter;
+        }
+        .glass-card:hover {
+            border-color: rgba(139, 92, 246, 0.4); 
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px -10px rgba(139, 92, 246, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-purple selection:text-white flex flex-col min-h-screen relative">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute inset-0 bg-grid opacity-30 transform-gpu"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] md:h-[600px] bg-brand-purple/10 rounded-full blur-[80px] md:blur-[120px] transform-gpu"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="https://linkwaveconnect.com.br" class="flex items-center gap-3 group shrink-0">
+                    <img src="https://linkwaveconnect.com.br/assets/linkwaveconnect.png" alt="Linkwave Connect" class="h-8 sm:h-10 md:h-12 lg:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" style="image-rendering: -webkit-optimize-contrast; transform-origin: left center;">
+                    <div class="h-6 w-px bg-brand-border hidden md:block"></div>
+                    <span class="font-display font-bold text-white text-sm md:text-base hidden xl:block group-hover:text-brand-purple transition-colors">Serviço de Mídia</span>
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-1 p-1 bg-brand-dark/50 rounded-xl border border-brand-border/50">
+                    <a href="https://linkwaveconnect.com.br/#hosting" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent whitespace-nowrap">Cloud & VPS</a>
+                    <a href="https://linkwaveconnect.com.br/#isp" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent flex items-center gap-2 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>Internet</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://linkwaveconnect.com.br/midia/" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-purple-400 bg-purple-500/10 border-purple-500/30 whitespace-nowrap flex items-center gap-1 xl:gap-2" title="Serviço de Mídia"><i class="fa-solid fa-video"></i> Mídia</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://tools.linkwaveconnect.com.br" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-gray-400 hover:text-white transition-all border border-transparent whitespace-nowrap flex items-center gap-1 xl:gap-2"><i class="fa-solid fa-toolbox"></i> Ferramentas</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://openwave.net.br" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-brand-blue hover:text-white hover:bg-brand-blue/10 transition-all border border-transparent whitespace-nowrap flex items-center gap-1 xl:gap-2"><i class="fa-solid fa-cubes"></i> Ecossistema</a>
+                    <div class="w-px h-4 bg-brand-border mx-1"></div>
+                    <a href="https://transparencia.linkwaveconnect.com.br/" class="px-2 xl:px-4 py-2 rounded-lg text-[11px] xl:text-xs font-medium text-cyan-400 hover:text-white hover:bg-cyan-500/10 transition-all border border-transparent whitespace-nowrap flex items-center gap-1 xl:gap-2" title="Portal da Transparência"><i class="fa-solid fa-scale-balanced"></i> Transp.</a>
+                </div>
+
+                <div class="flex items-center gap-2 shrink-0">
+                    <a href="https://wa.me/551145804215?text=Olá! Gostaria de saber mais sobre o apoio de mídia para igrejas da Linkwave." target="_blank" class="bg-brand-green hover:bg-green-600 text-black h-9 px-3 md:px-4 rounded-lg text-xs font-bold transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:hidden pb-3 -mt-1 overflow-x-auto no-scrollbar flex gap-2 w-full border-t border-brand-border/30 pt-3">
+                <a href="https://linkwaveconnect.com.br/#hosting" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap">Cloud & VPS</a>
+                <a href="https://linkwaveconnect.com.br/#isp" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span>Internet</a>
+                <a href="https://linkwaveconnect.com.br/midia/" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-purple-400 border border-purple-500/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-video"></i>Mídia</a>
+                <a href="https://tools.linkwaveconnect.com.br" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-brand-border whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-toolbox"></i>Ferramentas</a>
+                <a href="https://openwave.net.br" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-brand-blue border border-brand-blue/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-cubes"></i>Ecossistema</a>
+                <a href="https://transparencia.linkwaveconnect.com.br/" class="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium text-cyan-400 border border-cyan-500/30 whitespace-nowrap flex items-center gap-1"><i class="fa-solid fa-scale-balanced"></i>Transparência</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center mb-24 animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/10 border border-brand-purple/30 text-xs font-bold text-brand-purple mb-6 uppercase tracking-wider">
+                <i class="fa-solid fa-church"></i> Apoio a Ministérios
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white leading-tight">
+                Excelência técnica para a <span class="text-gradient">sua Igreja.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                A Linkwave Connect oferece suporte especializado em transmissão, projeção e áudio. Um serviço gratuito, mantido por amor à obra e ofertas voluntárias.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/551145804215?text=Olá! Gostaria de saber mais sobre o apoio de mídia para igrejas da Linkwave." target="_blank" class="w-full sm:w-auto bg-white text-black px-8 py-3.5 rounded-xl font-bold hover:bg-gray-200 transition-all text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-brand-green text-lg"></i> Solicitar Apoio Gratuito
+                </a>
+                <a href="#como-funciona" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-white border border-brand-border hover:bg-brand-border transition-all text-sm flex items-center justify-center">
+                    Entenda o Projeto
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mb-24">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl font-bold text-white mb-4">Nossas Especialidades</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Ajudamos a sua equipe a extrair o máximo dos equipamentos que a igreja já possui, seja de forma remota ou presencial.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 text-2xl border border-blue-500/20">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Transmissão Ao Vivo</h3>
+                    <p class="text-sm text-gray-400 flex-grow">Configuração completa de streaming. Otimização de câmeras, cenas, lower thirds e estabilidade da live para YouTube, Facebook e Instagram.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500 mb-6 text-2xl border border-purple-500/20">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Projeção e Letras</h3>
+                    <p class="text-sm text-gray-400 flex-grow">Gestão visual do culto. Sincronização de letras, versículos, vídeos de fundo e avisos para telões e painéis de LED.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6 text-2xl border border-orange-500/20">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Áudio & Mesas</h3>
+                    <p class="text-sm text-gray-400 flex-grow">Ajuste de ganho, equalização e roteamento em mesas de som físicas comuns. Envio do áudio limpo para a transmissão.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 mb-6 text-2xl border border-green-500/20">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Treinamento</h3>
+                    <p class="text-sm text-gray-400 flex-grow">Capacitação teórica e prática para voluntários da igreja. Ensinamos do zero ao avançado como operar o sistema de mídia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mb-24 bg-brand-card border border-brand-border rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue/5 rounded-full blur-[60px] pointer-events-none"></div>
+            <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+                <div>
+                    <h2 class="font-display text-3xl font-bold text-white mb-4">Ferramentas que Dominamos</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">Trabalhamos com os melhores softwares do mercado cristão e corporativo para garantir que sua igreja tenha recursos de ponta.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4 text-gray-300"><i class="fa-solid fa-circle-check text-brand-purple"></i> <strong>OBS Studio:</strong> Padrão ouro para lives.</li>
+                        <li class="flex items-center gap-4 text-gray-300"><i class="fa-solid fa-circle-check text-brand-purple"></i> <strong>Holyrics:</strong> Projeção para igrejas brasileiras.</li>
+                        <li class="flex items-center gap-4 text-gray-300"><i class="fa-solid fa-circle-check text-brand-purple"></i> <strong>Canva:</strong> Artes rápidas e profissionais.</li>
+                        <li class="flex items-center gap-4 text-gray-300"><i class="fa-solid fa-circle-check text-brand-purple"></i> <strong>Mesas Físicas Comuns:</strong> Áudio de qualidade a partir de mesas analógicas.</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-[#050505] border border-brand-border p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:border-brand-blue transition-colors"><i class="fa-solid fa-record-vinyl text-4xl text-white mb-3"></i><span class="font-bold text-sm text-white">OBS Studio</span></div>
+                    <div class="bg-[#050505] border border-brand-border p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:border-brand-blue transition-colors"><i class="fa-solid fa-book-bible text-4xl text-white mb-3"></i><span class="font-bold text-sm text-white">Holyrics</span></div>
+                    <div class="bg-[#050505] border border-brand-border p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:border-brand-blue transition-colors"><i class="fa-solid fa-palette text-4xl text-white mb-3"></i><span class="font-bold text-sm text-white">Canva</span></div>
+                    <div class="bg-[#050505] border border-brand-border p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:border-brand-blue transition-colors"><i class="fa-solid fa-sliders text-4xl text-white mb-3"></i><span class="font-bold text-sm text-white">Mesas Físicas</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="como-funciona" class="max-w-4xl mx-auto text-center mb-12">
+            <h2 class="font-display text-3xl font-bold text-white mb-4">Como funciona o projeto?</h2>
+            <div class="bg-gradient-to-b from-brand-card to-[#050505] border border-brand-border rounded-3xl p-8 md:p-12 mt-8">
+                <div class="flex justify-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green text-3xl border border-brand-green/30">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Serviço Gratuito. Sem Boletos.</h3>
+                <p class="text-gray-400 mb-8 leading-relaxed max-w-2xl mx-auto">
+                    Acreditamos que a mensagem do Evangelho merece chegar com excelência visual e sonora a todos os lares. Por isso, oferecemos este suporte de forma totalmente gratuita.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-6 text-left mb-10 border-y border-brand-border py-8">
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-globe text-brand-blue text-xl mt-1"></i>
+                        <div><h4 class="font-bold text-white mb-1">Atendimento Remoto</h4><p class="text-xs text-gray-500">Configuramos seus sistemas de qualquer lugar do Brasil via acesso remoto.</p></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-car text-brand-purple text-xl mt-1"></i>
+                        <div><h4 class="font-bold text-white mb-1">Visita Presencial</h4><p class="text-xs text-gray-500">Dependendo da região e disponibilidade, podemos treinar a equipe presencialmente.</p></div>
+                    </div>
+                </div>
+                <div class="bg-brand-purple/5 border border-brand-purple/20 p-6 rounded-xl text-left">
+                    <h4 class="font-bold text-brand-purple mb-2 flex items-center gap-2"><i class="fa-solid fa-seedling"></i> Oferta Voluntária</h4>
+                    <p class="text-sm text-gray-400">Nenhum pagamento é exigido. No entanto, aceitamos ofertas voluntárias para nos ajudar a continuar servindo outras congregações. Detalhes são tratados via WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-brand-border bg-[#020202] pt-12 pb-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div>
+                    <a href="https://linkwaveconnect.com.br" class="flex items-center justify-center md:justify-start gap-3 mb-4 opacity-60 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+                        <img src="https://linkwaveconnect.com.br/assets/linkwaveconnect.png" alt="Linkwave Connect" class="h-12 md:h-16 w-auto">
+                        <div class="h-6 w-px bg-gray-600"></div>
+                        <span class="font-display font-bold text-white text-sm md:text-base">Serviço de Mídia</span>
+                    </a>
+                    <p class="text-sm text-gray-600 max-w-sm">Tecnologia, Infraestrutura e Apoio Técnico para Ministérios.</p>
+                </div>
+                <div class="flex flex-col gap-3 w-full md:w-auto min-w-[220px]">
+                    <a href="https://wa.me/551145804215?text=Olá! Gostaria de saber mais sobre o apoio de mídia para igrejas da Linkwave." target="_blank" class="bg-brand-green hover:bg-green-600 text-black px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                    <a href="mailto:suporte@linkwaveconnect.com.br" class="bg-[#111] hover:bg-[#222] border border-brand-border text-gray-300 hover:text-white px-6 py-3 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-envelope"></i> Ouvidoria / Suporte
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 font-mono">
+                <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
+                    <p>&copy; <span id="copyright-year">2024</span> Linkwave Connect LTDA. Todos os direitos reservados.</p>
+                    <p class="font-bold text-gray-500">CNPJ: 53.108.042/0001-07</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startYear = 2023, currentYear = new Date().getFullYear();
+            document.getElementById('copyright-year').textContent = currentYear > startYear ? `${startYear}-${currentYear}` : startYear;
+        });
+    </script>
+</body>
+</html>
