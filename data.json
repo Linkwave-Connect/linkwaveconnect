@@ -24,13 +24,13 @@
     {
       "id": "shared-start",
       "category": "hosting_shared",
-      "name": "Plano Start",
+      "name": "Plano Compartilhado 1",
       "description": "Ideal para sites pessoais",
       "icon": "fa-cloud",
-      "price": "R$ 19,90",
+      "price": "R$ 15,00",
       "unit": "/mês",
-      "features": ["1 Site", "10GB NVMe", "SSL Grátis"],
-      "link": "URL_SHARED_1",
+      "features": ["7GB Armazenamento", "3 Contas de Email", "Armazenamento de email ilimitado", "3 Domínios adicionais", "10 Sites", "Subdomínios Ilimitados", "SSL Grátis"],
+      "link": "https://web.linkwaveconnect.com.br/index.php?rp=/store/hospedagem-compartilhada/compartilhado1",
       "highlight": false
     },
     {
@@ -41,8 +41,8 @@
       "icon": "fa-rocket",
       "price": "R$ 39,90",
       "unit": "/mês",
-      "features": ["Sites Ilimitados", "50GB NVMe", "Domínio Grátis"],
-      "link": "URL_SHARED_2",
+      "features": ["15GB Armazenamento", "20 Contas de Email", "Armazenamento de email ilimitado", "6 Domínios adicionais", "Sites ilimitados", "Subdomínios Ilimitados", "SSL Grátis"],
+      "link": "https://web.linkwaveconnect.com.br/index.php?rp=/store/hospedagem-compartilhada/compartilhado2",
       "highlight": true
     },
     {
